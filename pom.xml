@@ -15,6 +15,8 @@
 	<description>RESTful web application</description>
 	<properties>
 		<java.version>17</java.version>
+		<!-- The main class to start by executing java -jar -->
+        <start-class>com.example.restservice.Application</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -39,6 +41,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				 <configuration>
+                    <mainClass>com.example.restservice.Application</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>
